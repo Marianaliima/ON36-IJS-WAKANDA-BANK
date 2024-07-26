@@ -1,43 +1,73 @@
-# ON36-IJS-WAKANDA-BANK
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-# Descrição do Projeto Wakanda Bank✊🏿
-💡 Bancos comunitários são serviços financeiros solidários que visam gerar trabalho e renda, promovendo o desenvolvimento de economias locais, especialmente em territórios de baixa renda, por meio do apoio à economia popular e solidária.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-O Wakanda Bank é um banco que visa ajudar pessoas que fazem parte de grupos "minoritários"  na sociedade. Quando digo essa palavra não me refiro a números e sim a pessoas que estão em posição desigual em algum sentido na sociedade.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-<br>
+## Description
 
-## Serviços financeiros oferecidos pelo Wakanda Bank:
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- Crédito para financiamento de empreendimentos solidários.
-- Crédito para consumo pessoal e familiar, sem juros.
-- Cartão de crédito popular solidário.
-- Abertura e extrato de conta corrente.
-- Depósito em conta corrente.
-- Saque avulso ou com cartão magnético.
-- Pagamento de contas (água, luz, telefone etc.).
-- Recebimento de aposentadorias e outros - valores governamentais.
-- Gerentes da conta.
-- Prestação de contas diário e semanal para toda a comunidade.
+## Installation
 
+```bash
+$ npm install
+```
 
----
-## Programação Orientada a Objetos(OOP)
-Pensando nos serviços oferecidos no banco decidi usar o paradigma orientado a objeto tendo em vista que minha aplicação terá muitas classes e instâncias de objetos e isso vai facilitar a compreensão e a manutenção do código, com isso terei um código mais modular e escalável.
+## Running the app
 
-## Diagrama de Classes
- <img src="diagramaClasse.jpeg" alt="Gif Yeah" width="1980">
+```bash
+# development
+$ npm run start
 
+# watch mode
+$ npm run start:dev
 
-## Fluxo de abertura de conta
+# production mode
+$ npm run start:prod
+```
 
-O usuário decide criar a conta
-A conta é criada com sucesso e o cliente tem acesso a suas infos:
-- O cliente verifica se possui saldo.
-- O cliente pode solicitar empréstimo.
-- O cliente realiza um depósito.
+## Test
 
- <img src="fluxograma.jpg" alt="Gif Yeah" width="1980">
+```bash
+# unit tests
+$ npm run test
 
+# e2e tests
+$ npm run test:e2e
 
+# test coverage
+$ npm run test:cov
+```
 
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
