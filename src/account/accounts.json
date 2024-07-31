@@ -1,0 +1,77 @@
+[
+  {
+    "accountId": 1,
+    "clientId": "1",
+    "accountType": "current",
+    "balance": "300300300",
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 2,
+    "clientId": "2",
+    "accountType": "current",
+    "balance": "500400",
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 3,
+    "clientId": "3",
+    "accountType": "current",
+    "balance": 400500,
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 4,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": 900,
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 5,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": "500",
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 6,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": "500",
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 7,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": -700,
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20",
+    "transactions": "withdraw"
+  },
+  {
+    "accountId": 8,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": "500",
+    "transactions": "amount",
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20"
+  },
+  {
+    "accountId": 9,
+    "clientId": "9",
+    "accountType": "current",
+    "balance": 0,
+    "createdAt": "90/10/2020",
+    "updateAt": "30/50/20",
+    "transactions": "withdraw"
+  }
+]

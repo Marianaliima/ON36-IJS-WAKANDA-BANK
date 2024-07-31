@@ -38,6 +38,3 @@ A conta é criada com sucesso e o cliente tem acesso a suas infos:
 - O cliente realiza um depósito.
 
  <img src="fluxograma.jpg" alt="Gif Yeah" width="1980">
-
-
-
