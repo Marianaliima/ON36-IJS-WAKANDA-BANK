@@ -9,7 +9,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { AccountService } from './account.service';
-import { Account, AccountType } from './account.model';
+import { Account, AccountType } from './models/account.interface';
 
 @Controller('accounts')
 export class AccountController {

@@ -1,11 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-import { Account, AccountType } from './account.model';
+import { Account, AccountType } from './models/account.interface';
 
 @Injectable()
 export class AccountService {
-  private readonly filePath = path.resolve('src/account/accounts.json');
+  private readonly filePath = path.resolve('src/account/data/accounts.json');
 
   private readAccount(): Account[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
@@ -21,7 +21,7 @@ export class AccountService {
     accountType: AccountType,
     balance: number,
     overdraft: number,
-    createdAt: Date,
+    createAt: Date,
     updateAt: Date,
     transactions: string,
   ): Account {
@@ -35,7 +35,7 @@ export class AccountService {
       balance,
       transactions,
       overdraft,
-      createdAt,
+      createAt,
       updateAt,
     };
 

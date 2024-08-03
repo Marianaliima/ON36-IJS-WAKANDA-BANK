@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { Manager } from './manager.model';
 import { ManagerService } from './manager.service';
-import { Account, AccountType } from 'src/account/account.model';
+import { Account, AccountType } from '../account/models/account.interface';
 
 @Controller('manager')
 export class ManagerController {
@@ -35,7 +35,6 @@ export class ManagerController {
       transactions,
     );
   }
-  
 
   @Get()
   findAll(): Manager[] {
