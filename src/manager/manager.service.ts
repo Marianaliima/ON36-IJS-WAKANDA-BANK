@@ -3,7 +3,7 @@ import { Manager } from './manager.model';
 import * as path from 'path';
 import * as fs from 'fs';
 import { Client } from 'src/client/client-model';
-import { Account, AccountType } from 'src/account/account.model';
+import { Account, AccountType } from 'src/account/models/account.interface';
 
 @Injectable()
 export class ManagerService {
@@ -17,9 +17,7 @@ export class ManagerService {
     fs.writeFileSync(this.filePath, JSON.stringify(managers, null, 2), 'utf8');
   }
 
-  private readonly filePathClients = path.resolve(
-    'src/client/clients.json',
-  );
+  private readonly filePathClients = path.resolve('src/client/clients.json');
   private readClient(): Client[] {
     const data = fs.readFileSync(this.filePathClients, 'utf8');
     return JSON.parse(data) as Client[];
@@ -61,7 +59,7 @@ export class ManagerService {
     accountType: AccountType,
     balance: number,
     overdraft: number,
-    createdAt: Date,
+    createAt: Date,
     updateAt: Date,
     transactions: string,
   ): Account {
@@ -75,7 +73,7 @@ export class ManagerService {
       balance,
       transactions,
       overdraft,
-      createdAt,
+      createAt,
       updateAt,
     };
 
