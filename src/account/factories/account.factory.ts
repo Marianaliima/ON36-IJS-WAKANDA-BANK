@@ -6,12 +6,31 @@ import { SavingsAccount } from '../models/saving-accounts';
 
 @Injectable()
 export class AccountFactory {
-  createAccount(type: AccountType, accountId: number, clientId: number, createAt: Date, updateAt: Date, name: string, balance: number): Account {
+  createAccount(
+    type: AccountType,
+    accountId: number,
+    clientId: number,
+    createAt: Date,
+    updateAt: Date,
+    balance: number,
+  ): Account {
     switch (type) {
       case AccountType.SAVING_ACCOUNT:
-        return new SavingsAccount(accountId, clientId, balance, createAt, updateAt )
+        return new SavingsAccount(
+          accountId,
+          clientId,
+          balance,
+          createAt,
+          updateAt,
+        );
       case AccountType.CURRENT_ACCOUNT:
-        return new CheckingAccount(accountId, clientId, balance, createAt, updateAt );
+        return new CheckingAccount(
+          accountId,
+          clientId,
+          balance,
+          createAt,
+          updateAt,
+        );
       default:
         throw new Error('Invalid account type');
     }
