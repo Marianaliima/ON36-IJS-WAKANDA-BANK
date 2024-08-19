@@ -1,4 +1,5 @@
-import {Person, PersonType } from "./person.model";
+import { Person } from "./person.model";
+import { PersonType } from "./person-type-enum";
 
 
 export class ManagerAccount extends Person  {

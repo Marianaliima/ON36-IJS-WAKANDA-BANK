@@ -1,9 +1,6 @@
-export enum PersonType {
-    CLIENT = 'client',
-    MANAGER = 'manager',
-  }
+import { PersonType } from "./person-type-enum";
 
-export class Person {
+export abstract class Person {
     constructor(
       public name: string,
       public personType: PersonType,

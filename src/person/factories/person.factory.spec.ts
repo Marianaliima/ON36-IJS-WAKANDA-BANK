@@ -1,5 +1,6 @@
 import { PersonFactory } from './person.factory';
-import { Person, PersonType } from '../models/person.model';
+import { Person } from '../models/person.model';
+import { PersonType } from '../models/person-type-enum';
 import { ClientAccount } from '../models/client-model';
 import { ManagerAccount } from '../models/manager-model';
 

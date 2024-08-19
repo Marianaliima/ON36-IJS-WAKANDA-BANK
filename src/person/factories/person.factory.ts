@@ -1,7 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { ClientAccount } from '../models/client-model'
 import { ManagerAccount } from '../models/manager-model'
-import { Person, PersonType } from '../models/person.model'
+import { Person } from '../models/person.model'
+import { PersonType } from '../models/person-type-enum'
 
 @Injectable()
 export class PersonFactory {

@@ -2,11 +2,11 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import {  ClientAccount } from './models/client-model';
 import * as path from 'path';
 import * as fs from 'fs';
-import { PersonType } from './models/person.model';
+import { PersonType } from './models/person-type-enum';
 
 @Injectable()
 export class ClientAccountService {
-  private readonly filePath = path.resolve('src/person/data/clients.json');
+  private readonly filePath = path.resolve('src/adapters/data/clients.json');
 
   private readClient():  ClientAccount[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
@@ -28,6 +28,7 @@ export class ClientAccountService {
     country: string,
     documentId: string,
     createdAt: string,
+     clientAccount: [],
   ):  ClientAccount {
     const clients = this.readClient();
     const newClient:  ClientAccount = {
@@ -44,6 +45,7 @@ export class ClientAccountService {
       state,
       country,
       createdAt,
+      clientAccount,
     };
     clients.push(newClient);
     this.writeAccount(clients);

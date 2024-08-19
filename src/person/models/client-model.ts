@@ -1,8 +1,11 @@
-import {Person, PersonType } from "./person.model";
+import {Person } from "./person.model";
+import { PersonType } from "./person-type-enum";
+import { SavingsAccount } from "src/account/models/saving-account";
 
 
 export class ClientAccount extends Person  {
     clientId: number
+    clientAccount?: SavingsAccount[] = [];
 
     constructor(
         name: string,
@@ -19,6 +22,7 @@ export class ClientAccount extends Person  {
         clientId: number) {
             super(name, personType, email, dateOfBirthday, documentId, phoneNumber, streetAddress, city, state, country, createdAt)
             this.clientId = clientId
+            this.clientAccount = []
 
         }
       

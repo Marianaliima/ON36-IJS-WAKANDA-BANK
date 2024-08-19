@@ -1,18 +1,19 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-import { Account, AccountType } from './models/account.interface';
+import { AccountType } from './models/accounts.model';
+import { CheckingAccount } from './models/checking-account';
 
 @Injectable()
 export class AccountService {
   private readonly filePath = path.resolve('src/account/data/accounts.json');
 
-  private readAccount(): Account[] {
+  private readAccount(): CheckingAccount[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
-    return JSON.parse(data) as Account[];
+    return JSON.parse(data) as  CheckingAccount[];
   }
 
-  private writeAccount(accounts: Account[]): void {
+  private writeAccount(accounts: CheckingAccount[]): void {
     fs.writeFileSync(this.filePath, JSON.stringify(accounts, null, 2), 'utf8');
   }
 
@@ -20,21 +21,22 @@ export class AccountService {
     clientId: number,
     accountType: AccountType,
     balance: number,
-    overdraft: number,
+    transactions: string,
     createAt: Date,
     updateAt: Date,
-    transactions: string,
-  ): Account {
+    overdraft: number = 500,
+
+  ): CheckingAccount {
     const accounts = this.readAccount();
 
-    const newAccount: Account = {
+    const newAccount: CheckingAccount = {
       accountId:
         accounts.length > 0 ? accounts[accounts.length - 1].accountId + 1 : 1,
       clientId,
       accountType,
       balance,
-      transactions,
       overdraft,
+      transactions,
       createAt,
       updateAt,
     };
@@ -44,7 +46,7 @@ export class AccountService {
     return newAccount;
   }
 
-  findAll(): Account[] {
+  findAll():  CheckingAccount[] {
     return this.readAccount();
   }
 
@@ -64,6 +66,8 @@ export class AccountService {
     if (account.transactions === 'withdraw' && account.balance > 0) {
       account.balance = Number(account.balance) - Number(newBalance);
       this.writeAccount(accounts);
+    } else if(account.transactions === 'withdraw' && account.balance === 0 && account.overdraft > 0) {
+      account.balance = Number(account.overdraft) - Number(newBalance);
     } else {
       throw new HttpException(
         'Insufficient account balance including overdraft limit.',

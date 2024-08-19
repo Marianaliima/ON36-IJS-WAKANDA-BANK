@@ -1,7 +1,7 @@
 import { AccountFactory } from './factories/account.factory';
-import { AccountType, Account } from '../account/models/account.interface';
-import { CheckingAccount } from '../account/models/cheking-account';
-import { SavingsAccount } from '../account/models/saving-accounts';
+import { AccountType, Account } from './models/accounts.model';
+import { CheckingAccount } from './models/checking-account';
+import { SavingsAccount } from './models/saving-account';
 
 describe('Account Factory', () => {
   test('should create a saving account', () => {

@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ManagerAccount } from './models/manager-model';
 import { ManagerService } from './manager.service';
-import { PersonType } from './models/person.model';
+import { PersonType } from './models/person-type-enum';
 
 @Controller('manager')
 export class ManagerController {

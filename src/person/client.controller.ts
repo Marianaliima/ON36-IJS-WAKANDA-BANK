@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Patch, Param, Post } from '@nestjs/common';
 import { ClientAccount } from './models/client-model';
 import { ClientAccountService } from './client.service';
-import { PersonType } from './models/person.model';
+import { PersonType } from './models/person-type-enum';
 
 @Controller('clients')
 export class ClientAccountController {
@@ -20,6 +20,7 @@ export class ClientAccountController {
     @Body('state') state: string,
     @Body('country') country: string,
     @Body('createAt') createdAt:string,
+
   ): ClientAccount {
     return this.clientAccountService.createClient(
       name,
@@ -32,8 +33,8 @@ export class ClientAccountController {
       city,
       state,
       country,
-      createdAt
-    );
+      createdAt,
+      [],);
   }
 
   @Get(':id')

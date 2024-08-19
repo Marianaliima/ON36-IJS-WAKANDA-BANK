@@ -8,14 +8,15 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { AccountService } from './account.service';
-import { Account, AccountType } from './models/account.interface';
+import { AccountService } from './checking-account.service';
+import {  AccountType } from './models/accounts.model';
+import { CheckingAccount } from './models/checking-account';
 
-@Controller('accounts')
+@Controller('checking')
 export class AccountController {
   constructor(private readonly accountService: AccountService) {}
   @Get()
-  findAll(): Account[] {
+  findAll(): CheckingAccount[] {
     return this.accountService.findAll();
   }
   @Post()
@@ -23,19 +24,19 @@ export class AccountController {
     @Body('clientId') clientId: number,
     @Body('accountType') accountType: AccountType,
     @Body('balance') balance: number,
-    @Body('overdraft') overdraft: number,
     @Body('transactions') transactions: string,
     @Body('createdAt') createdAt: Date,
     @Body('updateAt') updateAtAt: Date,
-  ): Account {
+    @Body('overdraft') overdraft: 500,
+  ): CheckingAccount {
     return this.accountService.createAccount(
       clientId,
       accountType,
       balance,
-      overdraft,
+      transactions,
       createdAt,
       updateAtAt,
-      transactions,
+      overdraft,
     );
   }
 
@@ -43,7 +44,7 @@ export class AccountController {
   updateBalance(
     @Param('id') id: number,
     @Body('balance') newBalance: number,
-  ): Account {
+  ): CheckingAccount {
     return this.accountService.updateBalance(id, newBalance);
   }
 
@@ -51,7 +52,7 @@ export class AccountController {
   updateAccounType(
     @Param('id') id: number,
     @Body('accountType') accountType: AccountType,
-  ): Account {
+  ): CheckingAccount {
     return this.accountService.updateAccounType(id, accountType);
   }
 

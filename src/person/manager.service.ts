@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { ManagerAccount } from './models/manager-model';
 import * as path from 'path';
 import * as fs from 'fs';
-import { PersonType } from './models/person.model';
+import { PersonType } from './models/person-type-enum';
 
 @Injectable()
 export class ManagerService {
-  private readonly filePath = path.resolve('src/person/data/manager.json');
+  private readonly filePath = path.resolve('src/adapters/data/manager.json');
   private readManager(): ManagerAccount[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
     return JSON.parse(data) as ManagerAccount[];
