@@ -1,22 +1,24 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Client } from './client-model';
+import {  ClientAccount } from './models/client-model';
 import * as path from 'path';
 import * as fs from 'fs';
+import { PersonType } from './models/person.model';
 
 @Injectable()
 export class ClientAccountService {
-  private readonly filePath = path.resolve('src/client/clients.json');
+  private readonly filePath = path.resolve('src/person/data/clients.json');
 
-  private readClient(): Client[] {
+  private readClient():  ClientAccount[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
-    return JSON.parse(data) as Client[];
+    return JSON.parse(data) as  ClientAccount[];
   }
 
-  private writeAccount(clients: Client[]): void {
+  private writeAccount(clients: ClientAccount[]): void {
     fs.writeFileSync(this.filePath, JSON.stringify(clients, null, 2), 'utf8');
   }
   createClient(
     name: string,
+    personType: PersonType,
     email: string,
     phoneNumber: string,
     streetAddress: string,
@@ -25,14 +27,14 @@ export class ClientAccountService {
     state: string,
     country: string,
     documentId: string,
-    managerId: string,
-    createAt: Date,
-  ): Client {
+    createdAt: string,
+  ):  ClientAccount {
     const clients = this.readClient();
-    const newClient: Client = {
+    const newClient:  ClientAccount = {
       clientId:
         clients.length > 0 ? clients[clients.length - 1].clientId + 1 : 1,
       name,
+      personType,
       email,
       dateOfBirthday,
       documentId,
@@ -41,8 +43,7 @@ export class ClientAccountService {
       city,
       state,
       country,
-      managerId,
-      createAt,
+      createdAt,
     };
     clients.push(newClient);
     this.writeAccount(clients);
@@ -50,7 +51,7 @@ export class ClientAccountService {
     return newClient;
   }
 
-  findById(id: number): Client {
+  findById(id: number): ClientAccount {
     const clients = this.readClient();
     const client = clients.find((client) => client.clientId === Number(id));
 
