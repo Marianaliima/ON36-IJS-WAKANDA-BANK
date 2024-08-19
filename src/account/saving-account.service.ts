@@ -3,7 +3,6 @@ import { SavingsAccount } from './models/saving-account';
 import { AccountType } from './models/accounts.model';
 import * as path from 'path';
 import * as fs from 'fs';
-import { ClientAccount } from 'src/person/models/client-model';
 
 @Injectable()
 export class SavingAccountService {
@@ -17,17 +16,6 @@ export class SavingAccountService {
     private writeAccount(accounts: SavingsAccount[]): void {
       fs.writeFileSync(this.filePath, JSON.stringify(accounts, null, 2), 'utf8');
     }
-
-    private readonly filePathClients = path.resolve('src/adapters/data/clients.json');
-
-  private readClient():  ClientAccount[] {
-    const data = fs.readFileSync(this.filePathClients, 'utf8');
-    return JSON.parse(data) as  ClientAccount[];
-  }
-
-  private writeClient(clients: ClientAccount[]): void {
-    fs.writeFileSync(this.filePath, JSON.stringify(clients, null, 2), 'utf8');
-  }
   
     createAccount(
       clientId: number,
