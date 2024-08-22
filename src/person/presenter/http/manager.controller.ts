@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ManagerAccount } from './models/manager-model';
+import { ManagerAccount } from './domain/models/manager-model';
 import { ManagerService } from './manager.service';
-import { PersonType } from './models/person-type-enum';
+import { PersonType } from './domain/models/person-type-enum';
 
 @Controller('manager')
 export class ManagerController {
@@ -21,8 +21,9 @@ export class ManagerController {
     @Body('country') country: string,
     @Body('createdAt') createdAt: string,
   ): ManagerAccount {
-    return this.managerService.createManager( name,
-      personType,  
+    return this.managerService.createManager(
+      name,
+      personType,
       email,
       dateOfBirthday,
       documentId,
@@ -31,7 +32,8 @@ export class ManagerController {
       city,
       state,
       country,
-      createdAt);
+      createdAt,
+    );
   }
 
   @Get()

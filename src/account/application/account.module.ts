@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AccountService } from './checking-account.service';
-import { AccountController } from './checking-account.controller';
+import { AccountController } from '../presenter/http/checking-account.controller';
 import { SavingAccountService } from './saving-account.service';
 
 @Module({

@@ -8,9 +8,9 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { AccountService } from './checking-account.service';
-import {  AccountType } from './models/accounts.model';
-import { CheckingAccount } from './models/checking-account';
+import { AccountService } from '../../application/checking-account.service';
+import { AccountType } from './domain/models/accounts.model';
+import { CheckingAccount } from './domain/models/checking-account';
 
 @Controller('checking')
 export class AccountController {

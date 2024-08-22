@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-import { AccountType } from './models/accounts.model';
-import { CheckingAccount } from './models/checking-account';
+import { AccountType } from '../domain/models/accounts.model';
+import { CheckingAccount } from '../domain/models/checking-account';
 
 @Injectable()
 export class AccountService {
@@ -10,7 +10,7 @@ export class AccountService {
 
   private readAccount(): CheckingAccount[] {
     const data = fs.readFileSync(this.filePath, 'utf8');
-    return JSON.parse(data) as  CheckingAccount[];
+    return JSON.parse(data) as CheckingAccount[];
   }
 
   private writeAccount(accounts: CheckingAccount[]): void {
@@ -25,7 +25,6 @@ export class AccountService {
     createAt: Date,
     updateAt: Date,
     overdraft: number = 500,
-
   ): CheckingAccount {
     const accounts = this.readAccount();
 
@@ -46,7 +45,7 @@ export class AccountService {
     return newAccount;
   }
 
-  findAll():  CheckingAccount[] {
+  findAll(): CheckingAccount[] {
     return this.readAccount();
   }
 
@@ -66,7 +65,11 @@ export class AccountService {
     if (account.transactions === 'withdraw' && account.balance > 0) {
       account.balance = Number(account.balance) - Number(newBalance);
       this.writeAccount(accounts);
-    } else if(account.transactions === 'withdraw' && account.balance === 0 && account.overdraft > 0) {
+    } else if (
+      account.transactions === 'withdraw' &&
+      account.balance === 0 &&
+      account.overdraft > 0
+    ) {
       account.balance = Number(account.overdraft) - Number(newBalance);
     } else {
       throw new HttpException(

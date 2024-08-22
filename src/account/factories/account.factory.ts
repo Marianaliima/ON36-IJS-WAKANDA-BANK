@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CheckingAccount } from '../models/checking-account';
-import { Account } from '../models/accounts.model';
-import { AccountType } from '../models/accounts.model';
-import { SavingsAccount } from '../models/saving-account';
+import { CheckingAccount } from '../domain/models/checking-account';
+import { Account } from '../domain/models/accounts.model';
+import { AccountType } from '../domain/models/accounts.model';
+import { SavingsAccount } from '../domain/models/saving-account';
 
 @Injectable()
 export class AccountFactory {
@@ -17,16 +17,16 @@ export class AccountFactory {
     overdraft: number,
     interestRate: number,
   ): Account {
-    switch (accountType) {  
+    switch (accountType) {
       case AccountType.SAVING_ACCOUNT:
         return new SavingsAccount(
-      accountId,
-     clientId,
-     accountType,
-     balance,
-     transactions,
-     createAt,
-     updateAt,
+          accountId,
+          clientId,
+          accountType,
+          balance,
+          transactions,
+          createAt,
+          updateAt,
         );
       case AccountType.CURRENT_ACCOUNT:
         return new CheckingAccount(

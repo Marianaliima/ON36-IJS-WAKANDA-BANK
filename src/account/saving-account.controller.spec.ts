@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SavingAccountController } from './saving-account.controller';
+import { SavingAccountController } from './presenter/http/saving-account.controller';
 
 describe('SavingAccountController', () => {
   let controller: SavingAccountController;
