@@ -1,6 +1,6 @@
-import { Person } from './person.model';
-import { PersonType } from './models/person-type-enum';
-import { SavingsAccount } from 'src/account/models/saving-account';
+import { Person } from './person';
+import { PersonType } from './person-type-enum';
+import { SavingsAccount } from '../../account/domain/saving-account';
 
 export class ClientAccount extends Person {
   clientId: number;

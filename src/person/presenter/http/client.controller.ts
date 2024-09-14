@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Patch, Param, Post } from '@nestjs/common';
-import { ClientAccount } from './domain/models/client-model';
-import { ClientAccountService } from './client.service';
-import { PersonType } from './domain/models/person-type-enum';
+import { ClientAccount } from '../../domain/client';
+import { ClientAccountService } from '../../application/client.service';
+import { PersonType } from '../../domain/person-type-enum';
 
 @Controller('clients')
 export class ClientAccountController {

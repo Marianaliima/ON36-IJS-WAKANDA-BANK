@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { ManagerAccount } from './models/manager-model';
+import { ManagerAccount } from '../domain/manager';
 import * as path from 'path';
 import * as fs from 'fs';
-import { PersonType } from './models/person-type-enum';
+import { PersonType } from '../domain/person-type-enum';
 
 @Injectable()
 export class ManagerService {

@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CheckingAccount } from '../domain/models/checking-account';
-import { Account } from '../domain/models/accounts.model';
-import { AccountType } from '../domain/models/accounts.model';
-import { SavingsAccount } from '../domain/models/saving-account';
+import { CheckingAccount } from '../domain/checking-account';
+import { Account } from '../domain/accounts.model';
+import { AccountType } from '../domain/accounts.model';
+import { SavingsAccount } from '../domain/saving-account';
 
 @Injectable()
 export class AccountFactory {

@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import {  ClientAccount } from './models/client-model';
+import {  ClientAccount } from '../domain/client';
 import * as path from 'path';
 import * as fs from 'fs';
-import { PersonType } from './models/person-type-enum';
+import { PersonType } from '../domain/person-type-enum';
 
 @Injectable()
 export class ClientAccountService {

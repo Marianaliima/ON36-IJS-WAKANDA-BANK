@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-import { AccountType } from '../domain/models/accounts.model';
-import { CheckingAccount } from '../domain/models/checking-account';
+import { AccountType } from '../domain/accounts.model';
+import { CheckingAccount } from '../domain/checking-account';
 
 @Injectable()
 export class AccountService {

@@ -1,8 +1,8 @@
 import { PersonFactory } from './person.factory';
-import { Person } from '../domain/person.model';
+import { Person } from '../domain/person';
 import { PersonType } from '../domain/person-type-enum';
-import { ClientAccount } from '../domain/client-model';
-import { ManagerAccount } from '../domain/manager-model';
+import { ClientAccount } from '../domain/client';
+import { ManagerAccount } from '../domain/manager';
 
 describe('Account Factory', () => {
   test('should create a saving account', () => {

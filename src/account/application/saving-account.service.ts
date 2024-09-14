@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { SavingsAccount } from '../domain/models/saving-account';
-import { AccountType } from '../domain/models/accounts.model';
+import { SavingsAccount } from '../domain/saving-account';
+import { AccountType } from '../domain/accounts.model';
 import * as path from 'path';
 import * as fs from 'fs';
 
