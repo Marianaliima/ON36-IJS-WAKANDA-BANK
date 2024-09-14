@@ -1,12 +1,13 @@
-import { Injectable } from "@nestjs/common";
-import { ClientAccount } from '../models/client-model'
-import { ManagerAccount } from '../models/manager-model'
-import { Person, PersonType } from '../models/person.model'
+import { Injectable } from '@nestjs/common';
+import { ClientAccount } from '../domain/client';
+import { ManagerAccount } from '../domain/manager';
+import { Person } from '../domain/person';
+import { PersonType } from '../domain/person-type-enum';
 
 @Injectable()
 export class PersonFactory {
   createPerson(
-    personType: PersonType, 
+    personType: PersonType,
     name: string,
     email: string,
     dateOfBirthday: string,
@@ -18,13 +19,13 @@ export class PersonFactory {
     country: string,
     createdAt: string,
     clientId: number,
-    managerId: number
+    managerId: number,
   ): Person {
     switch (personType) {
       case PersonType.CLIENT:
         return new ClientAccount(
           name,
-          personType,  
+          personType,
           email,
           dateOfBirthday,
           documentId,
@@ -36,22 +37,22 @@ export class PersonFactory {
           createdAt,
           clientId,
         );
-        case PersonType.MANAGER:
-          return new ManagerAccount(
-            name,
-            personType,  
-            email,
-            dateOfBirthday,
-            documentId,
-            phoneNumber,
-            streetAddress,
-            city,
-            state,
-            country,
-            createdAt,
-            managerId,
-          )
-      
+      case PersonType.MANAGER:
+        return new ManagerAccount(
+          name,
+          personType,
+          email,
+          dateOfBirthday,
+          documentId,
+          phoneNumber,
+          streetAddress,
+          city,
+          state,
+          country,
+          createdAt,
+          managerId,
+        );
+
       default:
         throw new Error(`Unknown person type: ${personType}`);
     }

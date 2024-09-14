@@ -1,0 +1,13 @@
+[
+  {
+    "managerId": 1,
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "dateOfBirthday": "+0987654321",
+    "documentId": "USA",
+    "streetAddress": "CD654321",
+    "city": "456 Oak Avenue",
+    "state": "Springfield",
+    "country": "IL"
+  }
+]

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ClientAccountService } from './client.service';
-import { ClientAccountController } from './client.controller';
+import { ClientAccountService } from './application/client.service';
+import { ClientAccountController } from './presenter/http/client.controller';
 
 @Module({
   providers: [ClientAccountService],

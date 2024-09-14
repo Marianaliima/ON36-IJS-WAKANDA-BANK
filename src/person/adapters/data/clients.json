@@ -1,0 +1,27 @@
+[
+  {
+    "clientId": 1,
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "dateOfBirthday": "+1234567890",
+    "documentId": "USA",
+    "streetAddress": "AB123456",
+    "city": "123 Elm Street",
+    "state": "Springfield",
+    "country": "IL",
+    "managerId": "1",
+    "createAt": "2023-07-26T00:00:00Z"
+  },
+  {
+    "clientId": 2,
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "dateOfBirthday": "+0987654321",
+    "documentId": "USA",
+    "streetAddress": "CD654321",
+    "city": "456 Oak Avenue",
+    "state": "Springfield",
+    "country": "IL",
+    "createdAt": "2023-07-26T00:00:00Z"
+  }
+]
